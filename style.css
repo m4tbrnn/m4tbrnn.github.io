@@ -1,3 +1,5 @@
+@font-face{font-family:"Inter";src:url("fonts/inter.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Bricolage Grotesque";src:url("fonts/bricolage.woff2") format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
 :root{
   --encre:#20201e;--papier:#ffffff;--fond:#fafaf9;--voile:#f4f4f2;--ligne:#e5e3de;--doux:#66655f;
   --mate:#ff681f;--mate-fonce:#e04f0a;--mate-voile:#fff1ea;
@@ -159,4 +161,85 @@ strong{font-weight:650}
 @media (prefers-reduced-motion:reduce){
   .cta,.cta::after,.bulle-ia,.tunnel-bande i{animation:none}
   .tunnel-bande i{opacity:1;left:calc(var(--d) * 18%)}
+}
+.texte h3{font-size:17px;margin-top:22px;margin-bottom:6px}
+.tableau{overflow-x:auto;margin:14px 0 6px;border:1px solid var(--ligne);border-radius:14px}
+.tableau table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.5;min-width:560px}
+.tableau th{text-align:left;font-weight:600;background:var(--voile);padding:10px 12px;border-bottom:1px solid var(--ligne)}
+.tableau td{padding:10px 12px;border-bottom:1px solid var(--ligne);vertical-align:top;color:#3a3936}
+.tableau tr:last-child td{border-bottom:0}
+
+/* ===== Centre juridique ===== */
+.haut-juridique{background:rgba(255,255,255,.9)}
+.haut-juridique .wrap{gap:16px}
+.separateur{width:1px;height:26px;background:var(--ligne)}
+.nom-centre{font-size:14.5px;color:var(--doux);text-decoration:none}
+.retour{margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;text-decoration:none}
+.retour svg,.doc-fleche svg,.q-mail svg,.bouton-noir svg,.pied-mail svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.surtitre{display:flex;align-items:center;gap:9px;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mate-fonce);margin-bottom:14px}
+.surtitre::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--mate)}
+body:has(.hub),body:has(.doc-page){background:var(--papier)}
+
+.hub{position:relative;padding-block:72px 80px;overflow:hidden}
+.hub::before{content:"";position:absolute;left:-180px;top:-160px;width:620px;height:520px;background:radial-gradient(closest-side,rgba(255,104,31,.10),transparent);pointer-events:none}
+.hub-tete{position:relative;max-width:640px}
+.hub-tete h1{font-size:clamp(38px,5.6vw,58px);line-height:1.04}
+.hub-lead{margin-top:20px;color:var(--doux);max-width:52ch}
+.hub-grille{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:56px;margin-top:48px;align-items:start}
+.docs{border-top:1px solid var(--ligne)}
+.doc{display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:center;padding:24px 0;border-bottom:1px solid var(--ligne);text-decoration:none}
+.doc-num{font-size:12px;color:var(--doux);align-self:start;padding-top:6px;font-variant-numeric:tabular-nums}
+.doc-texte{display:flex;flex-direction:column;gap:4px;min-width:0}
+.doc-texte strong{font-family:var(--titre);font-size:22px;font-weight:600;letter-spacing:-.01em}
+.doc-texte span{font-size:14px;color:var(--doux)}
+.doc-fleche{width:36px;height:36px;border-radius:50%;background:var(--voile);display:grid;place-items:center;transition:background .15s,color .15s,transform .15s}
+.doc:hover .doc-fleche{background:var(--mate);color:#fff;transform:translateX(3px)}
+.question{display:flex;flex-direction:column;gap:6px}
+.q-ico{width:28px;height:28px;border-radius:50%;border:1px solid var(--ligne);display:grid;place-items:center;font-size:13px;color:var(--mate-fonce);margin-bottom:6px}
+.question h3{font-size:18px}
+.question p{font-size:13.5px;color:var(--doux)}
+.q-mail{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;color:var(--mate-fonce);text-decoration:none;margin-top:4px;word-break:break-all}
+.bouton-noir{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:var(--encre);color:#fff;text-decoration:none;font-size:14px;font-weight:600;padding:12px 16px;border-radius:8px}
+
+.doc-page{padding-block:44px 80px}
+.doc-grille{display:grid;grid-template-columns:220px minmax(0,1fr);gap:56px;align-items:start}
+.cote{position:sticky;top:96px;display:flex;flex-direction:column}
+.tous{font-size:13px;color:var(--doux);text-decoration:none;margin-bottom:28px}
+.tous:hover{color:var(--encre)}
+.cote-titre{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--doux);margin-bottom:10px}
+.cote-menu{display:flex;flex-direction:column;gap:2px;padding-bottom:26px;margin-bottom:26px;border-bottom:1px solid var(--ligne)}
+.cote-menu a{display:flex;align-items:center;justify-content:space-between;font-size:14px;color:#3a3936;text-decoration:none;padding:8px 10px;border-radius:8px}
+.cote-menu a:hover{background:var(--voile)}
+.cote-menu a.actif{background:var(--mate-voile);color:var(--mate-fonce);font-weight:600}
+.cote-menu a.actif::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--mate)}
+.doc-page .texte{max-width:760px;margin:0;padding:0;background:none;border:0;box-shadow:none}
+.doc-page .texte h1{font-size:clamp(32px,4.4vw,44px);margin-bottom:20px}
+.sommaire{border:1px solid var(--ligne);border-radius:10px;padding:10px 14px;font-size:14px}
+.sommaire summary{cursor:pointer;font-weight:500}
+.sommaire ol{margin:10px 0 4px;padding-left:18px;columns:2;column-gap:28px}
+.sommaire li{margin-bottom:4px;break-inside:avoid}
+.sommaire a{color:var(--doux);text-decoration:none}
+.sommaire a:hover{color:var(--encre);text-decoration:underline}
+.doc-page .maj{margin-top:18px;margin-bottom:0;font-size:13px}
+.filet{border:0;border-top:1px solid var(--ligne);margin:24px 0 8px}
+.doc-page .texte h2{scroll-margin-top:90px;font-size:clamp(22px,2.6vw,26px);margin-top:40px}
+.doc-page .texte a{color:var(--mate-fonce);text-decoration-thickness:1px;text-underline-offset:2px}
+.doc-page .texte p,.doc-page .texte li{max-width:none}
+
+.bas-juridique .wrap{align-items:center;gap:14px;padding-block:28px}
+.pied-logo{height:26px;width:auto}
+.pied-mail{margin-left:auto;display:inline-flex;align-items:center;gap:6px}
+
+@media (max-width:900px){
+  .hub-grille,.doc-grille{grid-template-columns:1fr;gap:36px}
+  .cote{position:static}
+  .cote-menu{flex-direction:row;flex-wrap:wrap}
+  .cote .question{display:none}
+  .sommaire ol{columns:1}
+}
+@media (max-width:600px){
+  .nom-centre,.separateur{display:none}
+  .hub{padding-block:44px 56px}
+  .doc-texte strong{font-size:19px}
+  .pied-mail{margin-left:0}
 }
